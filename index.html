@@ -41,7 +41,9 @@
 <body align='center'>
 <h1 class="k">KENNISTECH</h1>
     <form id="cipherForm">
-        <input type="text" id="plaintext" placeholder="Enter Plaintext" required>
+       <input type="text" id="plaintext" placeholder="Enter Plaintext" required>
+        <br><br>
+        <input type="number" id="key" placeholder="Enter Shift key" required>
         <br><br>
         <button type="submit">Submit</button>
     </form>
@@ -91,7 +93,7 @@ document.getElementById("cipherForm").addEventListener("submit", function(e){
     e.preventDefault();
 
     let plaintext = document.getElementById("plaintext").value;
-    let key = 3;
+    let key = document.getElementById("key").value;
 
     let encrypted = caesarEncrypt(plaintext, key);
     let decrypted = caesarDecrypt(encrypted, key);
